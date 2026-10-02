@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap');
+
+:root {
+  --gold: #f0c040;
+  --gold-dark: #b07b00;
+  --nav-font: 'Montserrat', 'Inter Variable', Inter, Arial, sans-serif;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  z-index: 300;
+  background: #ffffff !important;
+  transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.navbar.nav-hidden {
+  transform: translateY(-100%);
+}
+
+.navbar.scrolled {
+  background: #ffffff;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-img {
+  width: 160px;
+  height: 70px;
+  margin-bottom: 16px;
+  object-fit: contain;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 2.1rem;
+}
+
+.main-nav a {
+  font-family: var(--nav-font);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.9);
+  padding: 0.45rem 0.75rem;
+  transition: color 0.3s;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.navbar.scrolled .main-nav a {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.main-nav a:hover {
+  color: var(--gold);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--nav-font);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #fff !important;
+  background: #700707;
+  padding: 0.7rem 1.7rem;
+  border-radius: 6px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.nav-cta:hover {
+  background: var(--gold);
+  color: #111 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(240, 192, 64, 0.35);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 400;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 2.5px;
+  background: #000000;
+  display: block;
+  border-radius: 2px;
+  transition: transform 0.35s ease, opacity 0.25s ease, background 0.3s;
+}
+
+.navbar.scrolled .hamburger span {
+  background: #111;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* ===== DRAWER ===== */
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 350;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.drawer-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100%;
+  background: #0f0f0f;
+  z-index: 360;
+  transform: translateX(-100%);
+  transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 1.4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.drawer-logo {
+  height: 48px;
+  object-fit: contain;
+}
+
+.drawer-close {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.6rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px 8px;
+  transition: color 0.2s;
+}
+
+.drawer-close:hover {
+  color: #fff;
+}
+
+.drawer-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem 0;
+  flex: 1;
+}
+
+.drawer-nav a {
+  font-family: var(--nav-font);
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.85rem 1.6rem;
+  border-left: 3px solid transparent;
+  transition: all 0.25s;
+  letter-spacing: 0.3px;
+}
+
+.drawer-nav a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  border-left-color: var(--gold);
+}
+
+.drawer-footer {
+  padding: 1.2rem 1.6rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ===== RESPONSIVE — NAVBAR + DRAWER ===== */
+@media (max-width: 1280px) {
+  .main-nav a {
+    font-size: 0.78rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .logo-img {
+    width: 140px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  .navbar {
+    padding: 0 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 60px;
+    padding: 0 1.1rem;
+  }
+
+  .logo-img {
+    width: 110px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .drawer {
+    width: 100%;
+  }
+}
+
+/* #preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0f0f0f;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    #preloader.preloader-hide {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    #preloader .preloader-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.1rem;
+    }
+    #preloader .preloader-logo {
+      width: 130px;
+      height: auto;
+      object-fit: contain;
+      animation: preloader-pulse 1.4s ease-in-out infinite;
+    }
+    #preloader .preloader-ring {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 3px solid rgba(240, 192, 64, 0.25);
+      border-top-color: #f0c040;
+      animation: preloader-spin 0.8s linear infinite;
+    }
+    @keyframes preloader-spin { to { transform: rotate(360deg); } }
+    @keyframes preloader-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(0.96); }
+    } 
+    html.preload body { overflow: hidden; } *//* ============================================
+   SUN-X — Header Dropdown Navigation
+   (About Us / Capabilities / Our Works)
+   ============================================ */
+
+/* Desktop dropdown wrapper */
+.main-nav .nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.main-nav .nav-item>a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.main-nav .nav-item>a::after {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-top: -2px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.25s ease;
+  opacity: 0.75;
+}
+
+.main-nav .nav-item:hover>a::after,
+.main-nav .nav-item:focus-within>a::after {
+  transform: rotate(225deg);
+  margin-top: 2px;
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  /* No vertical gap between the nav item and the dropdown box:
+     the hidden state shifts UP (toward the link) instead of down,
+     so the visible state lands flush at top:100% with zero dead-zone.
+     This prevents the dropdown from losing :hover while the cursor
+     travels from the link down into the menu. */
+  transform: translateX(-50%) translateY(-8px);
+  transform-origin: top center;
+  min-width: 230px;
+  background: #0f0f0f;
+  border-radius: 10px;
+  padding: 0.5rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  will-change: opacity, transform;
+  z-index: 999;
+}
+
+.main-nav .nav-item:hover .nav-dropdown,
+.main-nav .nav-item:focus-within .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown a {
+  display: block;
+  padding: 0.6rem 0.9rem;
+  font-family: var(--nav-font);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #fff !important;
+  border-radius: 6px;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.nav-dropdown a::after {
+  content: none !important;
+}
+
+.nav-dropdown a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fec403 !important;
+}
+
+/* ===== Mobile drawer dropdown (accordion) ===== */
+/* .drawer-nav details {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+} */
+
+.drawer-nav details>summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--nav-font);
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.85rem 1.6rem;
+  /* border-left: 3px solid transparent; */
+  transition: all 0.25s;
+  letter-spacing: 0.3px;
+}
+
+.drawer-nav details>summary::marker,
+.drawer-nav details>summary::-webkit-details-marker {
+  display: none !important;
+  content: '' !important;
+  font-size: 0;
+}
+
+.drawer-nav details>summary::after {
+  content: '+';
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-left: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.drawer-nav details[open]>summary::after {
+  content: '\2212';
+}
+
+.drawer-nav details .drawer-subnav {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 0.6rem 1rem;
+}
+
+.drawer-nav details .drawer-subnav a {
+  opacity: 0.85;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.85rem 1.6rem;
+  border-left: 3px solid transparent;
+  transition: all 0.25s;
+  letter-spacing: 0.3px;
+}

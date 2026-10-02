@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <title>SUN-X Careers – New Application</title>
+  <style>
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { -ms-interpolation-mode: bicubic; border: 0; outline: none; text-decoration: none; display: block; }
+    body { margin: 0 !important; padding: 0 !important; background-color: #f4f4f4; }
+ 
+    @media only screen and (max-width: 600px) {
+      .email-wrapper  { width: 100% !important; }
+      .email-header   { padding: 18px 16px !important; }
+      .alert-bar      { padding: 10px 16px !important; }
+      .email-body     { padding: 20px 16px !important; }
+      .email-footer   { padding: 16px !important; }
+      .detail-label   { width: 90px !important; font-size: 11px !important; padding: 9px 12px !important; }
+      .detail-value   { font-size: 13px !important; padding: 9px 12px !important; }
+      .cta-btn        { padding: 11px 20px !important; font-size: 13px !important; }
+      .logo-img       { width: 90px !important; height: auto !important; }
+      .intro-text     { font-size: 14px !important; }
+      .cv-note-text   { font-size: 12px !important; }
+    }
+  </style>
+</head>
+<body>
+ 
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;padding:32px 0;">
+  <tr>
+    <td align="center" style="padding:0 12px;">
+ 
+      <table class="email-wrapper" role="presentation" width="580" cellpadding="0" cellspacing="0"
+             style="background:#ffffff;border-radius:8px;overflow:hidden;border:1px solid #e0e0e0;">
+ 
+        <!-- ===== HEADER ===== -->
+        <tr>
+          <td class="email-header" style="background:#700707;padding:24px 32px;">
+            <img class="logo-img"
+                 src="https://sun-x-concrete.vercel.app/src/assets/images/sun-x.png"
+                 alt="SUN-X Concrete" width="110" height="55" style="background-color: #fff; border-radius: 5px; padding: 5px;" />
+          </td>
+        </tr>
+ 
+        <!-- ===== ALERT BAR ===== -->
+        <tr>
+          <td class="alert-bar" style="background:#fec403;padding:10px 32px;">
+            <p style="margin:0;font-size:13px;font-weight:700;color:#1a1a1a;letter-spacing:0.6px;font-family:system-ui,Arial,sans-serif;">
+              NEW JOB APPLICATION RECEIVED
+            </p>
+          </td>
+        </tr>
+ 
+        <!-- ===== BODY ===== -->
+        <tr>
+          <td class="email-body" style="padding:32px;font-family:system-ui,Arial,sans-serif;">
+ 
+            <!-- Intro -->
+            <p class="intro-text" style="margin:0 0 24px;font-size:15px;color:#444444;line-height:1.6;">
+              A new job application has been submitted by
+              <strong style="color:#1a1a1a;">{{applicant_name}}</strong> for the position of
+              <strong style="color:#700707;">{{position}}</strong>.
+            </p>
+ 
+            <!-- Details table -->
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
+                   style="border:1px solid #e5e5e5;border-radius:6px;overflow:hidden;margin-bottom:24px;">
+ 
+              <tr style="background:#f9f9f9;">
+                <td class="detail-label" style="padding:10px 16px;font-size:12px;font-weight:700;color:#888888;text-transform:uppercase;width:120px;border-bottom:1px solid #e5e5e5;font-family:system-ui,Arial,sans-serif;white-space:nowrap;">Name</td>
+                <td class="detail-value" style="padding:10px 16px;font-size:14px;color:#1a1a1a;border-bottom:1px solid #e5e5e5;font-family:system-ui,Arial,sans-serif;">{{applicant_name}}</td>
+              </tr>
+ 
+              <tr>
+                <td class="detail-label" style="padding:10px 16px;font-size:12px;font-weight:700;color:#888888;text-transform:uppercase;border-bottom:1px solid #e5e5e5;font-family:system-ui,Arial,sans-serif;white-space:nowrap;">Email</td>
+                <td class="detail-value" style="padding:10px 16px;font-size:14px;border-bottom:1px solid #e5e5e5;font-family:system-ui,Arial,sans-serif;">
+                  <a href="mailto:{{applicant_email}}" style="color:#2563eb;text-decoration:none;">{{applicant_email}}</a>
+                </td>
+              </tr>
+ 
+              <tr style="background:#f9f9f9;">
+                <td class="detail-label" style="padding:10px 16px;font-size:12px;font-weight:700;color:#888888;text-transform:uppercase;border-bottom:1px solid #e5e5e5;font-family:system-ui,Arial,sans-serif;white-space:nowrap;">Phone</td>
+                <td class="detail-value" style="padding:10px 16px;font-size:14px;border-bottom:1px solid #e5e5e5;font-family:system-ui,Arial,sans-serif;">
+                  <a href="tel:{{applicant_phone}}" style="color:#1a1a1a;text-decoration:none;">{{applicant_phone}}</a>
+                </td>
+              </tr>
+ 
+              <tr>
+                <td class="detail-label" style="padding:10px 16px;font-size:12px;font-weight:700;color:#888888;text-transform:uppercase;border-bottom:1px solid #e5e5e5;font-family:system-ui,Arial,sans-serif;white-space:nowrap;">Position</td>
+                <td class="detail-value" style="padding:10px 16px;font-size:14px;font-weight:700;color:#700707;border-bottom:1px solid #e5e5e5;font-family:system-ui,Arial,sans-serif;">{{position}}</td>
+              </tr>
+ 
+              <tr style="background:#f9f9f9;">
+                <td class="detail-label" style="padding:10px 16px;font-size:12px;font-weight:700;color:#888888;text-transform:uppercase;font-family:system-ui,Arial,sans-serif;white-space:nowrap;">Applied On</td>
+                <td class="detail-value" style="padding:10px 16px;font-size:14px;color:#1a1a1a;font-family:system-ui,Arial,sans-serif;">{{time}}</td>
+              </tr>
+ 
+            </table>
+ 
+            <!-- CV note -->
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
+                   style="background:#fff8e1;border-left:3px solid #fec403;border-radius:0 4px 4px 0;margin-bottom:28px;">
+              <tr>
+                <td style="padding:14px 18px;">
+                  <p class="cv-note-text" style="margin:0;font-size:13px;color:#7a5c00;line-height:1.6;font-family:system-ui,Arial,sans-serif;">
+                     <strong>CV / Resume:</strong> {{cv_note}}
+                  </p>
+                </td>
+              </tr>
+            </table>
+ 
+            <!-- CTA -->
+            <table role="presentation" cellpadding="0" cellspacing="0">
+              <tr>
+                <td style="border-radius:6px;background:#1a1a1a;">
+                  <a class="cta-btn" href="mailto:{{applicant_email}}"
+                     style="display:inline-block;background:#1a1a1a;color:#ffffff;text-decoration:none;padding:12px 28px;border-radius:6px;font-size:14px;font-weight:600;font-family:system-ui,Arial,sans-serif;">
+                    Reply to {{applicant_name}}
+                  </a>
+                </td>
+              </tr>
+            </table>
+ 
+          </td>
+        </tr>
+ 
+        <!-- ===== DIVIDER ===== -->
+        <tr>
+          <td style="padding:0 32px;">
+            <hr style="border:none;border-top:1px solid #e5e5e5;margin:0;" />
+          </td>
+        </tr>
+ 
+        <!-- ===== FOOTER ===== -->
+        <tr>
+          <td class="email-footer" style="background:#f9f9f9;padding:20px 32px;">
+            <p style="margin:0 0 4px;font-size:12px;color:#aaaaaa;line-height:1.6;font-family:system-ui,Arial,sans-serif;">
+              This application was submitted via the SUN-X Careers page.
+            </p>
+            <p style="margin:0;font-size:12px;color:#aaaaaa;font-family:system-ui,Arial,sans-serif;">
+              © 2026 Sun-X Concrete Pvt Ltd · Chennai, India ·
+              <a href="https://sunxconcrete.org" style="color:#aaaaaa;">sunxconcrete.org</a>
+            </p>
+          </td>
+        </tr>
+ 
+      </table>
+ 
+    </td>
+  </tr>
+</table>
+ 
+</body>
+</html>

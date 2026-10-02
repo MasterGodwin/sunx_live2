@@ -1,0 +1,492 @@
+:root {
+    --red: #700707;
+    --navy: #1a2744;
+}
+
+.breadcrumb {
+    background: #f5f4f2;
+    padding: 0.75rem 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    color: #888;
+    margin-top: 92px;
+    border-bottom: 1px solid #eee;
+}
+
+.breadcrumb a {
+    color: #888;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+    color: var(--navy);
+}
+
+.breadcrumb .sep {
+    color: #ccc;
+}
+
+.breadcrumb .current {
+    color: var(--navy);
+    font-weight: 600;
+}
+
+.cap-hero {
+    position: relative;
+    height: 55vh;
+    min-height: 380px;
+    background: linear-gradient(135deg, #0e1829 0%, #1a2744 60%, #2a3d6e 100%);
+    display: flex;
+    align-items: center;
+    padding: 0 2.5rem;
+    overflow: hidden;
+}
+
+.cap-hero::before {
+    content: attr(data-ghost);
+    position: absolute;
+    right: -2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(8rem, 18vw, 18rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.04);
+    letter-spacing: -4px;
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.cap-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    max-height: 400px;
+}
+
+.cap-hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fec403;
+    margin-bottom: 2px;
+}
+
+.cap-hero-tag::before {
+    content: '';
+    width: 20px;
+    height: 1.5px;
+    background: #fec403;
+    display: block;
+}
+
+.cap-hero-title {
+    font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+    font-size: clamp(3rem, 7vw, 5.1rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 1.2rem;
+}
+
+.cap-hero-title span {
+    color: var(--red);
+}
+
+.cap-hero-subtitle {
+    font-size: 0.96rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.75;
+    max-width: 540px;
+    text-align: justify;
+}
+
+.cap-hero-stats {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cap-stat-num {
+    font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2.6rem;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+}
+
+.cap-stat-num span {
+    color: #fec403;
+}
+
+.cap-stat-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.cap-section {
+    padding: 5rem 2.5rem;
+    background: #fff;
+}
+
+.cap-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cap-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+    margin-bottom: 5rem;
+}
+
+.cap-intro-text h2 {
+    font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #700707;
+    line-height: 1.05;
+    margin-bottom: 1.2rem;
+}
+
+.cap-intro-text p {
+    font-size: 0.94rem;
+    color: #666;
+    line-height: 1.85;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.cap-intro-img {
+    border-radius: 4px;
+    overflow: hidden;
+    background: #f0ede8;
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cap-intro-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.cap-process {
+    background: #f5f4f2;
+    padding: 5rem 2.5rem;
+}
+
+.section-head {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.section-head .eyebrow {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 0.8rem;
+}
+
+.section-head .eyebrow::before,
+.section-head .eyebrow::after {
+    content: '';
+    width: 20px;
+    height: 1.5px;
+    background: var(--red);
+    display: block;
+}
+
+.section-head h2 {
+    font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #700707;
+    line-height: 1;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.process-card {
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem 1.8rem;
+    border: 1px solid #eee;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s, border-color 0.3s;
+    opacity: 0;
+    transform: translateY(24px);
+}
+
+.process-card-bgicon {
+    position: absolute;
+    right: -14px;
+    bottom: -14px;
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+    opacity: 0.07;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.process-card:hover .process-card-bgicon {
+    opacity: 0.12;
+    transform: scale(1.06);
+}
+
+.process-card-content {
+    position: relative;
+    z-index: 1;
+}
+
+.process-card.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.process-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.08);
+    border-color: var(--red);
+}
+
+.process-card-num {
+    font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.05);
+    line-height: 1;
+    letter-spacing: -3px;
+    margin-bottom: 0.8rem;
+    margin-top: -12px;
+}
+
+.process-card-icon {
+    position: absolute;
+    top: 1.8rem;
+    right: 1.8rem;
+    width: 59px;
+    height: 59px;
+    background: #fdecea;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--red);
+    font-size: 28px;
+    z-index: 2;
+}
+
+.process-card h3 {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #700707;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.6rem;
+}
+
+.process-card p {
+    font-size: 0.83rem;
+    color: #777;
+    line-height: 1.75;
+    text-align: justify;
+}
+
+/* Facilities map band */
+.facilities-band {
+    background: #0e1829;
+    padding: 5rem 2.5rem;
+}
+
+.facilities-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.facilities-inner .section-head .eyebrow::before,
+.facilities-inner .section-head .eyebrow::after {
+    background: #fec403;
+}
+
+.facilities-inner .section-head h2 {
+    color: #fff;
+}
+
+.plant-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.2rem;
+    margin-top: 3rem;
+}
+
+.plant-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 1.8rem 1.5rem;
+    transition: background 0.25s, border-color 0.25s;
+}
+
+.plant-card:hover {
+    background: rgb(64 68 68);
+    border-color: rgb(254 196 3);
+}
+
+.plant-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 0.3rem;
+}
+
+.plant-loc {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fec403;
+    margin-bottom: 0.8rem;
+}
+
+.plant-cap {
+    font-size: 0.83rem;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.65;
+    text-align: justify;
+}
+
+.cap-cta {
+    background: var(--red);
+    padding: 4rem 2.5rem;
+    text-align: center;
+}
+
+.cap-cta h2 {
+    font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 0.8rem;
+}
+
+.cap-cta p {
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 520px;
+    margin: 0 auto 1.8rem;
+    line-height: 1.75;
+}
+
+.btn-white {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    color: var(--red);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 0.85rem 2.2rem;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-white:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+@media(max-width:900px) {
+    .cap-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cap-hero-stats {
+        gap: 8px;
+    }
+}
+
+@media(max-width:600px) {
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .breadcrumb {
+        padding: 0.75rem 1.2rem;
+    }
+
+    .cap-hero {
+        padding: 0 4.8px;
+    }
+
+    .cap-section,
+    .cap-process,
+    .facilities-band,
+    .cap-cta {
+        padding: 3.5rem 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .process-card-icon {
+        top: 1.4rem;
+        right: 1.4rem;
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+    }
+
+    .process-card-num {
+        margin-bottom: 0.8rem;
+        margin-top: -25px;
+    }
+
+}
